@@ -3,9 +3,11 @@ n = input().strip()
 n=n.lower()
 # Remove white spaces
 n = n.replace(" ", "")
-#remove repeated elements
-n=sorted(set(n))
-# Print the modified string
-
+c=[]
 for i in n:
+    if n.count(i)==1:
+        c.append(i)
+c=sorted(c)
+# Print the modified string
+for i in c:
     print(i,end='')
