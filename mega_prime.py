@@ -1,23 +1,21 @@
-def isprime(n):
-    if n<=1:
+def is_prime(num):
+    if num < 2:
         return False
-    
-    for i in range(2,int(n**0.5)+1):
-        if n%i==0:
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
             return False
     return True
-def  alldigits(n):
-    while n>0: 
-        digit=n%10
-        if not isprime(digit):
+
+def is_mega_prime(n):
+    digits = str(n)
+    for digit in digits:
+        if not is_prime(int(digit)):
             return False
-        n=n//10
     return True
-def mega(n):
-    return isprime(n) and alldigits(n)
-    
-n=int(input())
-if mega(n):
+
+n = int(input())
+
+if is_prime(n) and is_mega_prime(n):
     print("Mega Prime")
 else:
     print("Not Mega Prime")
